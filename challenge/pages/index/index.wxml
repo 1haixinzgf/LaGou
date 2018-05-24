@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="job-hd">
+        <view class="logo">
+            <image class="logo-pic" src="../../images/logo.png" />
+        </view>
+        <navigator class="job-search">
+            <input type="text" class="job-search-input" placeholder="搜索公司/职位" />
+            <image class="job-search-pic"  src="../../images/job-search-pic.png"/>
+        </navigator>
+    </view>
+    <view class="job-recommend">
+        <view class="line-left"></view>
+        <text>为你推荐好职位</text>
+        <view class="line-right"></view>
+    </view>
+</view>
