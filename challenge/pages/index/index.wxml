@@ -3,14 +3,36 @@
         <view class="logo">
             <image class="logo-pic" src="../../images/logo.png" />
         </view>
-        <navigator class="job-search">
-            <input type="text" class="job-search-input" placeholder="搜索公司/职位" />
+        <view class="job-search" bindtap="jumpsearch">
+            <input type="text" class="job-search-input" placeholder="搜索公司/职位" readonly="readonly"/>
             <image class="job-search-pic"  src="../../images/job-search-pic.png"/>
-        </navigator>
+        </view>
     </view>
     <view class="job-recommend">
         <view class="line-left"></view>
         <text>为你推荐好职位</text>
         <view class="line-right"></view>
+    </view>
+    <view class="job-bd">
+        <view class="job-item" wx:for="{{position}}" wx:key="{{item.id}}" dataset-index="index">
+            <view class="company-logo">
+                <image src="{{position.image}}" class="company-pic"/>
+            </view>
+            <view class="job-work">
+                <text class="job-work-position">{{position.job}}</text>
+                <text class="job-work-company">{{position.company}}</text>
+                <view class="job-demand">
+                    <text class="item-list">{{position.city}}</text>
+                    <text class="item-list">{{position.experience}}</text>
+                    <text class="item-list">{{position.educteid}}</text>
+                    <!-- <text class="item-list">公司</text> -->
+                    <text class="item-list">{{position.area}}</text>
+                </view>
+            </view>
+            <view class="job-ft">
+                <text class="job-money">{{position.salary}}</text>
+                <text class="job-publish">{{position.publishtime}}</text>
+            </view>
+        </view>
     </view>
 </view>
