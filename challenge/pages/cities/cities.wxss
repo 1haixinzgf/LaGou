@@ -1,0 +1,68 @@
+.container {
+    width: 750rpx;
+    height: 100vh;  
+    box-sizing: border-box;
+}
+.hot-city {
+    width: 750rpx;
+    height: 40rpx;
+    /* background-color: yellow; */
+    color: #282828;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+    line-height: 40rpx;
+    
+}
+.hot-city-pic {
+    width: 30rpx;
+    height: 30rpx;
+    padding-left: 60rpx;
+    padding-right: 15rpx;
+    vertical-align: middle;
+}
+.cities {
+    width: 750rpx;
+    padding-top: 20rpx;
+    /* margin: 0 auto; */
+    /* background-color: red; */
+    /* margin-top: 20rpx; */
+}
+.cities text {
+    display: inline-block;
+    width: 150rpx;
+    height: 60rpx;
+    border: 1rpx solid #363636;
+    border-radius: 30rpx;
+    margin: 10rpx 50rpx 10rpx 100rpx;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 30rpx;
+    color: #282828;
+    overflow: hidden;
+
+}
+.cities text:nth-child(3n+1) {
+    /* outline: none; */
+    margin-left: 80rpx; 
+    /* margin-top: 20rpx; */
+}
+.cities text:nth-child(3n+2) {
+    margin-left: 0;
+    margin-right: 0;
+}
+.cities text:nth-child(3n) {
+    margin-left: 50rpx;
+    /* margin-right: 0; */
+}
+.other-city{
+    width: 750rpx;
+    height: 40rpx;
+    /* background-color: yellow; */
+    color: #282828;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+    line-height: 40rpx;
+    padding-left: 60rpx;
+}
+
+

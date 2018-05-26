@@ -13,26 +13,27 @@
         <text>为你推荐好职位</text>
         <view class="line-right"></view>
     </view>
-    <view class="job-bd">
-        <view class="job-item" wx:for="{{position}}" wx:key="{{item.id}}" dataset-index="index">
+    <scroll-view scroll-y style="height: 2000rpx;" class="job-bd">
+        <view  class="job-item" wx:for="{{position}}" wx:key="{{item.id}}" dataset-index="index">
             <view class="company-logo">
-                <image src="{{position.image}}" class="company-pic"/>
+                <image src="{{item.image}}" class="company-pic"/>
             </view>
             <view class="job-work">
-                <text class="job-work-position">{{position.job}}</text>
-                <text class="job-work-company">{{position.company}}</text>
+                <text class="job-work-position">{{item.job}}</text>
+                <text class="job-work-company">{{item.company}}</text>
                 <view class="job-demand">
-                    <text class="item-list">{{position.city}}</text>
-                    <text class="item-list">{{position.experience}}</text>
-                    <text class="item-list">{{position.educteid}}</text>
-                    <!-- <text class="item-list">公司</text> -->
-                    <text class="item-list">{{position.area}}</text>
+                    <text class="item-list">{{item.city}}</text>
+                    <text class="item-list">{{item.experience}}</text>
+                    <text class="item-list">{{item.educteid}}</text>
+                     <text class="item-list">{{item.company}}</text> 
+                    <!-- <text class="item-list">{{item.area}}</text> -->
                 </view>
             </view>
             <view class="job-ft">
-                <text class="job-money">{{position.salary}}</text>
-                <text class="job-publish">{{position.publishtime}}</text>
+                <text class="job-money">{{item.salary}}</text>
+                <text class="job-publish">{{item.publishtime}}</text>
             </view>
         </view>
-    </view>
+        <view class="nomore"><text>没有更多了</text></view>
+    </scroll-view>
 </view>

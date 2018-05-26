@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/cities/cities",
+    "pages/search/search", 
     "pages/logs/logs",
     "pages/rank/rank",
     "pages/collection/collection",

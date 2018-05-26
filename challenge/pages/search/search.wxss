@@ -1,0 +1,156 @@
+.page {
+    width: 750rpx;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.container {
+    width: 750rpx;
+    height: 100vh; 
+    overflow: hidden;
+}
+.search {
+    width: 720rpx;
+    height: 70rpx;
+    margin: 0 auto;
+    /* background-color: red; */
+    margin-top: 10rpx;
+    font-size: 0;
+    position: relative;
+}
+.search-city {
+    float: left;
+    width: 120rpx;
+    height: 70rpx;
+    /* background-color: blue; */
+    text-align: center;
+
+}
+.choose-city {
+    font-size: 30rpx;
+    color: #343434;
+    line-height: 70rpx;
+    text-align: center;
+  
+}
+.search-city-pic {
+    width: 25rpx;
+    height: 30rpx;
+    vertical-align: middle;
+    margin-left: 15rpx;
+    margin-bottom: 20rpx;
+
+}
+.search-input {
+    display: inline-block;
+}
+.search-input {
+    width: 480rpx;
+    /* text-align: center; */
+    display: inline-block;
+    margin-top: 10rpx;
+    height: 50rpx;
+    background-color: #fff;
+    margin-left: 10rpx;
+    font-size: 30rpx;
+    color: #fbfbfb;
+    border-radius: 50rpx;
+    border:1rpx solid #474747;   
+    position: relative; 
+}
+.search-position {
+    width: 415rpx;
+    height: 50rpx;
+    display: inline-block;
+    /* background-color: red; */
+    border-radius: 50rpx;
+    margin-left: 65rpx;
+    z-index: 999;
+}
+.job-search-pic{
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    z-index: 3;
+    left: 15rpx;
+    top: 8rpx;
+}
+.search-cancel {
+    float: right;
+    width: 60rpx;
+    height: 70rpx;
+    margin-right: 15rpx;
+    /* background-color: blue; */
+    text-align: center;
+    font-size: 30rpx;
+    line-height: 70rpx;
+}
+.search:after {
+    content: '';
+    width: 800rpx;
+    height: 1rpx;
+    transform: scaleY(0.3);
+    position: absolute;
+    top: 80rpx;
+    left: -20rpx;
+    background-color: #474747;
+}
+.search-bd {
+    margin-top: 11rpx;
+    width: 750rpx;
+    height: calc(100vh - 80rpx);
+    background-color: #888888;
+}
+.search-history {
+    width: 700rpx;
+    height: 80rpx;
+    margin-top: 5rpx;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+    color: #282828;
+    font-size: 30rpx;
+}
+.search-history text {
+    display: inline-block;
+    margin-top: 25rpx;
+
+
+}
+.history-delete {
+    width: 120rpx;
+    height: 60rpx;
+    float: right;
+    margin-right: 20rpx;
+    /* background-color: red; */
+     padding-top: 5rpx;
+    padding-left: 10rpx;
+    text-align: center;
+}
+.history-delete-pic {
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;   
+}
+.history-position {
+    background-color: #fff;
+    display: inline-block;
+    margin-top: 15rpx;
+    margin-left: 40rpx;
+    padding: 10rpx 25rpx 10rpx 25rpx;
+    /* height: 40rpx; */
+    font-size: 30rpx;
+    /* line-height: 40rpx; */
+    /* text-align: center; */
+    color: #282828;
+    border: 1rpx solid #fff;
+    border-radius: 30rpx;
+}
+.search-guess {
+    width: 750px;
+    margin-top: 150rpx;
+    font-size: 30rpx;
+    color: #282828;
+    margin-left: 20rpx;
+    
+    
+}
+

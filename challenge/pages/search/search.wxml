@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="search-hd">
+    <view class="search">
+        <view class="search-city" bindtap="choosecity">
+            <text class="choose-city">{{location}}</text>
+        <image src="../../images/dropdown.png" class="search-city-pic"/></view>
+        <view class="search-input">
+            <image class="job-search-pic"  src="../../images/job-search-pic.png"/>
+            <input class="search-position" style='color:#000;padding-left:20rpx;'/>
+        </view>
+        <view class="search-cancel"><text >取消</text></view>
+    </view>
+    </view>
+    <view class="search-bd">
+        <view class="search-history">
+            <text>历史搜索</text>
+            <view class="history-delete">
+                <image src="../../images/delete.png" class="history-delete-pic" />
+                <text>清空</text>
+            </view>
+        </view>
+        <view class="history-position">
+            <text>哈哈</text>
+        </view>
+        <view class="search-guess">
+            <text>猜你要搜</text>
+        </view>
+    </view>
+    </view>

@@ -1,0 +1,16 @@
+<view class="container">
+    <view class="hot-city">
+        <image src="../../images/hot.png" class="hot-city-pic" />
+        <text>热门城市</text>
+    </view>
+     <view class="cities"><!--优化，将事件绑定到cities上，事件捕获和时间冒泡，currenttarget、target、detail -->
+        <text bindtap="changecity" data-value='{{item.city}}' wx:for="{{hotcities}}" wx:key="index">{{item.city}}</text>
+    </view>
+    <view class="other-city">       
+        <text>热门城市</text>
+    </view>
+    <view class="cities">
+        <text bindtap="changecity" >全国</text>
+    </view>
+   </view>
+mode
