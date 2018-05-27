@@ -79,6 +79,7 @@
 }
 .job-bd {
     width: 100%;
+    height: calc(100vh - 400rpx);
 }
 .job-item {
     /* float: left; */

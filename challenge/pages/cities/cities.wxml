@@ -5,12 +5,19 @@
     </view>
      <view class="cities"><!--优化，将事件绑定到cities上，事件捕获和时间冒泡，currenttarget、target、detail -->
         <text bindtap="changecity" data-value='{{item.city}}' wx:for="{{hotcities}}" wx:key="index">{{item.city}}</text>
-    </view>
+        </view>
+    <view wx:for="{{firstname}}" wx:key="index" wx:for-index="firstnameindex">
     <view class="other-city">       
-        <text>热门城市</text>
+        <text>{{item.firstname}}</text>
     </view>
     <view class="cities">
-        <text bindtap="changecity" >全国</text>
-    </view>
+        <text bindtap="changecity" wx:for-item="othercities" wx:for="{{firstname[firstnameindex].city}}" wx:for-index="othercitiesindex"
+         wx:key="index">{{othercities}}</text>
+    </view></view>
    </view>
-mode
+
+
+   <!-- <view class="cities">
+    <text bindtap="changecity" data-value="{{othercities.city}}" wx:for-item="othercities" wx:for="{{hotcities}}"
+     wx:key="index">{{othercities.city}}</text>
+</view> -->

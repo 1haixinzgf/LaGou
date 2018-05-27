@@ -6,23 +6,26 @@
         <image src="../../images/dropdown.png" class="search-city-pic"/></view>
         <view class="search-input">
             <image class="job-search-pic"  src="../../images/job-search-pic.png"/>
-            <input class="search-position" style='color:#000;padding-left:20rpx;'/>
-        </view>
-        <view class="search-cancel"><text >取消</text></view>
+            <input class="search-position" focus='true' value="{{search.content}}" bindinput="onInput" />
+            <image class="search-back-pic {{!search.content?'hidden':''}}" src="../../images/delete2.png"  bindtap="searchdelete"/>
+
+         </view>
+        <view class="search-cancel {{!search.content?'':'hidden'}}" bindtap="searchcancel"><text >取消</text></view>
+        <view class="search-cancel {{!search.content?'hidden':''}}" bindtap="searchinto"><text >搜索</text></view>
     </view>
     </view>
     <view class="search-bd">
-        <view class="search-history">
-            <text>历史搜索</text>
-            <view class="history-delete">
+        <view class="search-history {{history.length === 0?'hidden':''}}">
+            <text>我搜过的</text>
+            <view class="history-delete" bindtap="deleteall">
                 <image src="../../images/delete.png" class="history-delete-pic" />
                 <text>清空</text>
             </view>
         </view>
-        <view class="history-position">
-            <text>哈哈</text>
+        <view class="history-position" wx:for="{{history}}" wx:key="index">
+            <text>{{item}}</text>
         </view>
-        <view class="search-guess">
+        <view class="search-guess {{history.length === 0?'top':''}}" >
             <text>猜你要搜</text>
         </view>
     </view>

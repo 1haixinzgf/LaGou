@@ -13,7 +13,7 @@
         <text>为你推荐好职位</text>
         <view class="line-right"></view>
     </view>
-    <scroll-view scroll-y style="height: 2000rpx;" class="job-bd">
+    <scroll-view scroll-y="true"  class="job-bd">
         <view  class="job-item" wx:for="{{position}}" wx:key="{{item.id}}" dataset-index="index">
             <view class="company-logo">
                 <image src="{{item.image}}" class="company-pic"/>

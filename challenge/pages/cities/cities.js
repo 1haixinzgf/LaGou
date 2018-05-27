@@ -6,7 +6,10 @@ Page({
    */
   data: {
   hotcities: [],
-  place: ['全国', '呼和浩特','北京']
+  othercities: [],
+  firstname:[],
+  
+  // place: ['全国', '呼和浩特','北京']
   },
   hotcities() {
     wx.request({
@@ -16,20 +19,40 @@ Page({
         'content-type': 'application/json'  
       },
       success: res => {
-        console.log(res.data.data.cities);
+        // console.log(res.data.data.cities);
         this.setData({
           hotcities: res.data.data.cities
         });
-        console.log(this.data.cities);
       },
       fail: () => {
       }
     })
   },
-  bindtap(){
-    const id = this.data.cities.id;
-    const city = this.data.cities.city
+ othercities() {
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5b094b715c37757453191eb3/hot-cities/address',
+      method: 'get',
+      header: {
+        'content-type': 'application/json'  
+      },
+      success: res => {
+        console.log(res.data.data);
+        // console.log(res.data.data[0].city);
+
+        this.setData({
+         firstname: res.data.data,
+        //  othercities: res.data.data.city
+        });
+        //  console.log(this.data.othercities)
+        console.log(this.data.firstname);
+
+       
+      },
+      fail: () => {
+      }
+    })
   },
+
   changecity(e) {
     var value = e.target.dataset.value;
     var pages = getCurrentPages();
@@ -46,7 +69,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  this.hotcities()
+  this.hotcities(),
+  this.othercities()
   },
 
   /**

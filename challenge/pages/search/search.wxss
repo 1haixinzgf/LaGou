@@ -58,21 +58,36 @@
     position: relative; 
 }
 .search-position {
-    width: 415rpx;
+    width: 355rpx;
     height: 50rpx;
     display: inline-block;
     /* background-color: red; */
     border-radius: 50rpx;
-    margin-left: 65rpx;
-    z-index: 999;
+    margin-left: 50rpx;
+    /* z-index: 999; */
+    color:#000;
+    padding-left: 10rpx;
+    /* padding-right: 200rpx; */
 }
-.job-search-pic{
+.job-search-pic {
     width: 40rpx;
     height: 40rpx;
     position: absolute;
-    z-index: 3;
+    /* z-index: 3; */
     left: 15rpx;
     top: 8rpx;
+}
+
+.search-back-pic {
+    width: 30rpx;
+    height: 30rpx;
+    position: absolute;
+    z-index: 3;
+    left: 430rpx;
+    top: 10rpx;
+}
+.hidden {
+    display: none;
 }
 .search-cancel {
     float: right;
@@ -88,7 +103,7 @@
     content: '';
     width: 800rpx;
     height: 1rpx;
-    transform: scaleY(0.3);
+    transform: scaleY(0.1);
     position: absolute;
     top: 80rpx;
     left: -20rpx;
@@ -98,7 +113,8 @@
     margin-top: 11rpx;
     width: 750rpx;
     height: calc(100vh - 80rpx);
-    background-color: #888888;
+    background-color: #fcf8f8f5;
+    overflow: hidden;
 }
 .search-history {
     width: 700rpx;
@@ -133,16 +149,22 @@
 .history-position {
     background-color: #fff;
     display: inline-block;
-    margin-top: 15rpx;
+    /* width: 200rpx; */
+    margin-top: 23rpx;
     margin-left: 40rpx;
-    padding: 10rpx 25rpx 10rpx 25rpx;
+    background-color: #a39696;
+    padding: 5rpx 25rpx 5rpx 25rpx;
     /* height: 40rpx; */
     font-size: 30rpx;
+    max-width: 600rpx;
+    overflow: hidden;
     /* line-height: 40rpx; */
     /* text-align: center; */
     color: #282828;
     border: 1rpx solid #fff;
     border-radius: 30rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .search-guess {
     width: 750px;
@@ -150,7 +172,9 @@
     font-size: 30rpx;
     color: #282828;
     margin-left: 20rpx;
-    
-    
+ 
+}
+.top {
+    margin-top: 20rpx;
 }
 
