@@ -73,8 +73,8 @@
 .scroll {
     /* position: relative; */
     margin-top: 20rpx;
-    height: calc(100vh - 220rpx);
-    overflow: hidden;
+    height: calc(100vh - 330rpx);
+    /* overflow: hidden; */
 }
 .scroll ::-webkit-scrollbar {
     width: 0;
