@@ -26,16 +26,21 @@
 
 }
 .choose-city {
+    display: inline-block;
+    width: 60rpx;
     font-size: 30rpx;
     color: #343434;
     line-height: 70rpx;
     text-align: center;
+    height:70rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
   
 }
 .search-city-pic {
     width: 25rpx;
     height: 30rpx;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     margin-left: 15rpx;
     margin-bottom: 20rpx;
 
@@ -113,7 +118,7 @@
     margin-top: 11rpx;
     width: 750rpx;
     height: calc(100vh - 80rpx);
-    background-color: #fcf8f8f5;
+    background-color: #fcf8f8;
     overflow: hidden;
 }
 .search-history {
@@ -147,7 +152,7 @@
     vertical-align: middle;   
 }
 .history-position {
-    background-color: #fff;
+    /* background-color: #fff; */
     display: inline-block;
     /* width: 200rpx; */
     margin-top: 23rpx;

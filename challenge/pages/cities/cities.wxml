@@ -11,8 +11,8 @@
         <text>{{item.firstname}}</text>
     </view>
     <view class="cities">
-        <text bindtap="changecity" wx:for-item="othercities" wx:for="{{firstname[firstnameindex].city}}" wx:for-index="othercitiesindex"
-         wx:key="index">{{othercities}}</text>
+        <text bindtap="changecity"  wx:for-item="othercities" wx:for="{{firstname[firstnameindex].city}}" wx:for-index="othercitiesindex"
+         wx:key="index" data-value="{{othercities}}">{{othercities}} </text>
     </view></view>
    </view>
 

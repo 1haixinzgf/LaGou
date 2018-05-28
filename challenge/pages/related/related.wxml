@@ -1,0 +1,78 @@
+<view class="container">
+    <view class="search-hd">
+        <view class="search-position">
+            <image src="../../images/job-search-pic.png" class="search-position-pic"/>
+            <input class="search-position-input"/>
+        </view>
+        <view class="search-nav">
+            <view class="search-nav-list">
+                <text>位置</text>
+            </view>
+            <view class="search-nav-list">
+                <text>职位</text>
+            </view>
+            <view class="search-nav-list">
+                <text>公司</text>
+            </view>
+            <view class="search-nav-list">
+                <text>排序</text>
+            </view>
+            </view>
+           
+            <scroll-view scroll-y class="scroll">
+                <view class="position-list">
+                    <view><text>月薪范围</text></view>
+                    <view class="position-items">
+                    <view class="position-item" wx:for="{{salary}}" wx:key="index">
+                        {{item}}
+                    </view></view>
+                </view>
+                <view class="position-list">
+                    <view>
+                        <text>发布时间</text>
+                    </view>
+                    <view class="position-items">
+                        <view class="position-item" wx:for="{{publishtime}}" wx:key="index">
+                            {{item}}
+                        </view>
+                    </view>
+                </view>
+                <view class="position-list">
+                    <view>
+                        <text>工作经验</text>
+                    </view>
+                    <view class="position-items">
+                        <view class="position-item" wx:for="{{experience}}" wx:key="index">
+                            {{item}}
+                        </view>
+                    </view>
+                </view>
+                <view class="position-list">
+                    <view>
+                        <text>学历要求</text>
+                    </view>
+                    <view class="position-items">
+                        <view class="position-item" wx:for="{{education}}" wx:key="index">
+                            {{item}}
+                        </view>
+                    </view>
+                </view>
+                <view class="position-list">
+                    <view>
+                        <text>工作性质</text>
+                    </view>
+                    <view class="position-items">
+                        <view class="position-item" wx:for="{{mode}}" wx:key="index">
+                            {{item}}
+                        </view>
+                    </view>
+                </view>
+                
+                </scroll-view>
+                <view class="btn">
+                <button class="position-btn">确定</button>
+            </view>
+                </view>
+                
+
+                </view>
