@@ -143,9 +143,7 @@
 .position-btn {
     background-color: #2aca97;
 }
-.hidden {
-    display: none;
-}
+
 
 .position-sort {
     display: flex;
@@ -166,4 +164,50 @@
 }
 .showColor {
   background-color: #2aca97;
+  color: #fff;
+}
+ .city-right {
+    background-color: #f8f5f5;
+    width: 250rpx;
+} 
+.city-list {
+    width: 250rpx;
+    text-align: center;
+    font-size: 30rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #282828;
+    margin-top: 20rpx;
+
+}
+.city-right ::-webkit-scrollbar {
+    width: 0;
+    height: 0;    
+    color: transparent;
+}
+.city-ft {
+    background-color: #fff;
+    color: #282828;
+    /* font-size: 35rpx; */
+    position: fixed;
+    bottom: 20rpx;
+    display: inline-block;
+    width: 700rpx;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    /* margin: 0 auto; */
+    margin-left: 25rpx;
+    text-align: center;
+    font-size: 30rpx;
+}
+.city-ft-pic {
+    vertical-align: middle;
+    width: 40rpx;
+    height: 40rpx;
+    padding-right: 20rpx;
+}
+
+
+.hidden {
+    display: none;
 }

@@ -5,22 +5,30 @@
             <input class="search-position-input" />
         </view>
         <view class="search-nav">
-            <view class="search-nav-list" bindtap="select" data-nav="position">
+            <view class="search-nav-list" bindtap="select" data-nav="position" data-status="0">
                 <text>位置</text>
             </view>
-            <view class="search-nav-list" bindtap="select" data-nav="job">
+            <view class="search-nav-list" bindtap="select" data-nav="job" data-status="1">
                 <text>职位</text>
             </view>
-            <view class="search-nav-list" bindtap="select" data-nav="company">
+            <view class="search-nav-list" bindtap="select" data-nav="company" data-status="2">
                 <text>公司</text>
             </view>
-            <view class="search-nav-list" bindtap="select" data-nav="sort">
+            <view class="search-nav-list" bindtap="select" data-nav="sort" data-status="3">
                 <text>排序</text>
             </view>
         </view>
     </view>
-
-    <scroll-view scroll-y class="scroll {{}}">
+    <view class="main">
+ <scroll-view scroll-y class="city-right" style="height: calc(100vh - 300rpx);" >
+     <view wx:for="{{field}}" wx:key="index" class="city-list">{{item.name}}</view>
+ </scroll-view>
+ <view class="city-ft">
+     <image src="../../images/change1.png" class="city-ft-pic" bindtap="changecity"/>
+     <text>切换城市  </text><text>{{location}}</text>
+ </view>
+</view>
+    <scroll-view scroll-y class="scroll hidden" >
         <view class="position-list">
             <view>
                 <text>月薪范围</text>
@@ -38,7 +46,7 @@
                 <text>发布时间</text>
             </view>
             <view class="position-items">
-                <view class="position-item" wx:for="{{publishtime}} {{publishtimeShowIndex === index?'showColor':''}}"
+                <view class="position-item  {{publishtimeShowIndex === index?'showColor':''}}" wx:for="{{publishtime}}"
                 bindtap="selectpublishtime" data-index="{{index}}" wx:key="index">
                     {{item}}
                 </view>
@@ -61,7 +69,7 @@
             </view>
             <view class="position-items">
                 <view class="position-item {{educationShowIndex === index?'showColor':''}}"
-                bindtap="selecteduction" data-index="{{index}}" wx:for="{{education}}" wx:key="index">
+                bindtap="selecteducation" data-index="{{index}}" wx:for="{{education}}" wx:key="index">
                     {{item}}
                 </view>
             </view>
@@ -71,8 +79,8 @@
                 <text>工作性质</text>
             </view>
             <view class="position-items">
-                <view class="position-item {{educationShowIndex === index?'showColor':''}}"
-                bindtap="educationShowIndex" data-index="{{index}}" wx:for="{{mode}}" wx:key="index">
+                <view class="position-item {{modeShowIndex === index?'showColor':''}}"
+                bindtap="selectmode" data-index="{{index}}" wx:for="{{mode}}" wx:key="index">
                     {{item}}
                 </view>
             </view>
@@ -84,24 +92,25 @@
 
 
 
-    <scroll-view scroll-y class="scroll hidden">
-        <view class="position-list">
+    <scroll-view scroll-y class="scroll hidden" >
+        <view class="position-list ">
             <view>
                 <text>融资阶段</text>
             </view>
             <view class="position-items">
-                <view class="position-item" wx:for="{{financing}}" wx:key="index">
-                    {{item}}
+                <view class="position-item {{item.isShow?'showColor':''}}" wx:for="{{financing}}" wx:key="index"
+                bindtap="selectfinancing" data-index="{{index}}">
+                    {{item.name}}
                 </view>
             </view>
         </view>
         <view class="position-list">
             <view>
-                <text>融资阶段</text>
+                <text>行业领域</text>
             </view>
             <view class="position-items">
-                <view class="position-item" wx:for="{{field}}" wx:key="index">
-                    {{item}}
+                <view class="position-item {{item.isShow?'showColor':''}}" wx:for="{{field}}" wx:key="index" bindtap="selectfield" data-index="{{index}}">
+                    {{item.name}}
                 </view>
             </view>
         </view>
@@ -110,8 +119,8 @@
         </view>
     </scroll-view>
     <view class="position-sort hidden">
-        <view class="sort-intelligence">智能排序</view>
-        <view class="sort-time">时间排序</view>
+        <view class="sort-intelligence {{currentIndex==0?'showColor':''}}" bindtap="changesort" data-index="0" >智能排序</view>
+        <view class="sort-time {{currentIndex==0?'':'showColor'}}" bindtap="changesort" data-index="1" >时间排序</view>
     </view>
 
 </view>
