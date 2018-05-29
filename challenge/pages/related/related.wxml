@@ -1,78 +1,117 @@
 <view class="container">
     <view class="search-hd">
         <view class="search-position">
-            <image src="../../images/job-search-pic.png" class="search-position-pic"/>
-            <input class="search-position-input"/>
+            <image src="../../images/job-search-pic.png" class="search-position-pic" />
+            <input class="search-position-input" />
         </view>
         <view class="search-nav">
-            <view class="search-nav-list">
+            <view class="search-nav-list" bindtap="select" data-nav="position">
                 <text>位置</text>
             </view>
-            <view class="search-nav-list">
+            <view class="search-nav-list" bindtap="select" data-nav="job">
                 <text>职位</text>
             </view>
-            <view class="search-nav-list">
+            <view class="search-nav-list" bindtap="select" data-nav="company">
                 <text>公司</text>
             </view>
-            <view class="search-nav-list">
+            <view class="search-nav-list" bindtap="select" data-nav="sort">
                 <text>排序</text>
             </view>
-            </view>
-           
-            <scroll-view scroll-y class="scroll">
-                <view class="position-list">
-                    <view><text>月薪范围</text></view>
-                    <view class="position-items">
-                    <view class="position-item" wx:for="{{salary}}" wx:key="index">
-                        {{item}}
-                    </view></view>
-                </view>
-                <view class="position-list">
-                    <view>
-                        <text>发布时间</text>
-                    </view>
-                    <view class="position-items">
-                        <view class="position-item" wx:for="{{publishtime}}" wx:key="index">
-                            {{item}}
-                        </view>
-                    </view>
-                </view>
-                <view class="position-list">
-                    <view>
-                        <text>工作经验</text>
-                    </view>
-                    <view class="position-items">
-                        <view class="position-item" wx:for="{{experience}}" wx:key="index">
-                            {{item}}
-                        </view>
-                    </view>
-                </view>
-                <view class="position-list">
-                    <view>
-                        <text>学历要求</text>
-                    </view>
-                    <view class="position-items">
-                        <view class="position-item" wx:for="{{education}}" wx:key="index">
-                            {{item}}
-                        </view>
-                    </view>
-                </view>
-                <view class="position-list">
-                    <view>
-                        <text>工作性质</text>
-                    </view>
-                    <view class="position-items">
-                        <view class="position-item" wx:for="{{mode}}" wx:key="index">
-                            {{item}}
-                        </view>
-                    </view>
-                </view>
-                
-                </scroll-view>
-                <view class="btn">
-                <button class="position-btn">确定</button>
-            </view>
-                </view>
-                
+        </view>
+    </view>
 
+    <scroll-view scroll-y class="scroll {{}}">
+        <view class="position-list">
+            <view>
+                <text>月薪范围</text>
+            </view>
+             <view class="position-items">
+                <view wx:for="{{salary}}" class="position-item {{salaryShowIndex === index?'showColor':''}}"
+                 wx:key="{{index}}"  bindtap="selectsalary" data-index="{{index}}">
+                <!-- salaryShowIndex -->
+                    {{item}}
                 </view>
+            </view>
+        </view>
+        <view class="position-list">
+            <view>
+                <text>发布时间</text>
+            </view>
+            <view class="position-items">
+                <view class="position-item" wx:for="{{publishtime}} {{publishtimeShowIndex === index?'showColor':''}}"
+                bindtap="selectpublishtime" data-index="{{index}}" wx:key="index">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class="position-list">
+            <view>
+                <text>工作经验</text>
+            </view>
+            <view class="position-items">
+                <view class="position-item {{experienceShowIndex === index?'showColor':''}}"
+                bindtap="selectexperience" data-index="{{index}}" wx:for="{{experience}}" wx:key="index">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class="position-list">
+            <view>
+                <text>学历要求</text>
+            </view>
+            <view class="position-items">
+                <view class="position-item {{educationShowIndex === index?'showColor':''}}"
+                bindtap="selecteduction" data-index="{{index}}" wx:for="{{education}}" wx:key="index">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class="position-list">
+            <view>
+                <text>工作性质</text>
+            </view>
+            <view class="position-items">
+                <view class="position-item {{educationShowIndex === index?'showColor':''}}"
+                bindtap="educationShowIndex" data-index="{{index}}" wx:for="{{mode}}" wx:key="index">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class="btn">
+            <button class="position-btn">确定</button>
+        </view>
+    </scroll-view>
+
+
+
+    <scroll-view scroll-y class="scroll hidden">
+        <view class="position-list">
+            <view>
+                <text>融资阶段</text>
+            </view>
+            <view class="position-items">
+                <view class="position-item" wx:for="{{financing}}" wx:key="index">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class="position-list">
+            <view>
+                <text>融资阶段</text>
+            </view>
+            <view class="position-items">
+                <view class="position-item" wx:for="{{field}}" wx:key="index">
+                    {{item}}
+                </view>
+            </view>
+        </view>
+        <view class="btn">
+            <button class="position-btn">确定</button>
+        </view>
+    </scroll-view>
+    <view class="position-sort hidden">
+        <view class="sort-intelligence">智能排序</view>
+        <view class="sort-time">时间排序</view>
+    </view>
+
+</view>
