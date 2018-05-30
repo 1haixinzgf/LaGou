@@ -19,7 +19,7 @@
             </view>
         </view>
     </view>
-    <view class="main">
+    <view class="main {{status==0?'':'hidden'}}">
  <scroll-view scroll-y class="city-right" style="height: calc(100vh - 300rpx);" >
      <view wx:for="{{field}}" wx:key="index" class="city-list">{{item.name}}</view>
  </scroll-view>
@@ -28,7 +28,9 @@
      <text>切换城市  </text><text>{{location}}</text>
  </view>
 </view>
-    <scroll-view scroll-y class="scroll hidden" >
+
+
+    <scroll-view scroll-y class="scroll {{status==1?'':'hidden'}}" >
         <view class="position-list">
             <view>
                 <text>月薪范围</text>
@@ -92,7 +94,7 @@
 
 
 
-    <scroll-view scroll-y class="scroll hidden" >
+    <scroll-view scroll-y class="scroll {{status==2?'':'hidden'}}" >
         <view class="position-list ">
             <view>
                 <text>融资阶段</text>
@@ -118,7 +120,7 @@
             <button class="position-btn">确定</button>
         </view>
     </scroll-view>
-    <view class="position-sort hidden">
+    <view class="position-sort {{status==3?'':'hidden'}}">
         <view class="sort-intelligence {{currentIndex==0?'showColor':''}}" bindtap="changesort" data-index="0" >智能排序</view>
         <view class="sort-time {{currentIndex==0?'':'showColor'}}" bindtap="changesort" data-index="1" >时间排序</view>
     </view>

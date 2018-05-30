@@ -1,0 +1,152 @@
+.container {
+    background-color: #f1f6f4;
+}
+.head {
+    background-color: #fff;
+}
+.code-padding {
+    padding-left: 50rpx;
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    /* position: relative; */
+}
+/* .code-padding:after {
+    position: absolute;
+    content: '';
+    width: 750rpx;
+    height: 1rpx;
+    top: 128rpx;
+    z-index: 2;
+    right: -35rpx;
+    border-top: 1rpx dotted #282828;
+} */
+.personal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20rpx;
+    background-color: #fff;
+    position: relative;
+}
+.personal-left {
+    padding-top: 30rpx;
+}
+.personal-name {
+    font-size: 50rpx;
+    padding-left: 30rpx;
+}
+.personal-name text{
+    display: block;
+}
+.personal-title {
+    font-size: 30rpx;
+    margin-bottom: 20rpx;
+    margin-top: 10rpx;
+}
+.personal-info {
+    font-size: 30rpx;
+    padding-left: 30rpx;
+    color: #282828;
+}
+.personal-description {
+    font-size: 30rpx;
+    padding-left: 30rpx;
+    color: #888888;
+}
+.personal-tel {
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-top: 30rpx;
+    /* margin-bottom: 20rpx; */
+    font-size: 30rpx;
+}
+.personal-pic {
+    vertical-align: middle;
+    width: 40rpx;
+    height: 40rpx;
+    padding-left: 20rpx;
+    padding-right: 40rpx;
+    
+}
+.personal-mail {
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+}
+.personal-right {
+    width: 200rpx;
+    height: 200rpx;
+    margin-top: 50rpx;
+    margin-right: -20rpx;
+    color: #2aca97;
+    font-size: 30rpx;
+    text-align: center;
+}
+.personal-pic3 {
+    padding-right: 10rpx;
+    vertical-align: middle;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.section-wanted {
+    margin-top: 15rpx;
+    background-color: #fff;
+}
+.wanted-hd {
+
+    height: 60rpx;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+/* }.section-wanted:before {
+    position: absolute;
+    content: '';
+    width: 750rpx;
+    height: 1rpx;
+    top: 10rpx;
+    z-index: 2;
+    right: -35rpx;
+    border-top: 1rpx dotted #282828;
+} */
+.wanted-left {
+    padding-left: 20rpx;
+    font-size: 35rpx;
+    text-align: center;
+}
+.wanted-right {
+    padding-right: 30rpx;
+    font-size: 30rpx;
+    color: #2aca97;
+}
+.wanted-ft{
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    padding-left: 20rpx;
+}
+.wanted-ft text{
+    display: block;
+}
+.section-experience {
+    margin-top: 20rpx;
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 30rpx;
+    background-color: #fff;
+}
+.section-experience image{
+    width: 30rpx;
+    height: 30rpx;
+    padding-right: 20rpx;
+
+}
+.section-personal {
+    width: 100%;
+    padding-top: 20rpx;
+    padding-left: 20rpx;
+    background-color: #fff;
+    margin-top: 30rpx;
+}

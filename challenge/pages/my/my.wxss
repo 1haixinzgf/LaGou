@@ -1,1 +1,54 @@
-/* pages/my/my.wxss */
+.weui-cell {
+    font-size: 30rpx;
+}
+.weui-cell-pad {
+    padding-left: 20rpx;
+}
+.weui-cell-pad3 {
+    padding-left: 15rpx;
+}
+.weui__ft-finish {
+    font-size: 25rpx;
+    color: #888888;
+}
+.weui__ft-percent {
+    font-size: 20rpx;
+    color: #2aca97;
+}
+.head-pic {
+    width: 150rpx;
+    height: 150rpx;
+}
+.weui-cell-Info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60rpx;
+    margin-top: 20rpx;
+
+}
+.weui-cell-left {
+    margin-left: 30rpx;
+}
+.weui-cell-right {
+    margin-right: 30rpx;
+}
+.weui-cell-left text{
+    display: block;
+}
+.my-name {
+    font-size: 60rpx;
+    font-weight: bold;
+}
+.cell-margin {
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    padding-top: 26rpx;
+}
+.login-btn {
+    margin-top: 80rpx;
+    font-size: 30rpx;
+    text-align: center;
+    height: 80rpx;
+    line-height: 80rpx;
+
+}

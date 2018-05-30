@@ -1,0 +1,85 @@
+<view class="container">
+    <scroll-view scroll-y style="height: 100vh;">
+        <navigator url="" class="weui-cell weui-cell_access head" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="../../images/code.png" style="margin-right: 5px;vertical-align: middle;width:30px; height: 30px;"></image>
+            </view>
+            <view class="weui-cell__bd code-padding">扫码用电脑编辑简历,体验更好哦</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access weui__ft-finish">
+            </view>
+        </navigator>
+        <view class="personal">
+            <view class="personal-left">
+                <view class="personal-name">
+                    <text class="personal-title">个人描述</text>
+                    <text>海心</text>
+                </view>
+                <view class="personal-info">
+                    <text>男|22岁|南昌市|本科|应届毕业生</text>
+                </view>
+                <view class="personal-description">
+                        <text>前端小白创作中</text>
+                    </view>
+                <view class="personal-tel">
+                        <image src="../../images/phone.png" class="personal-pic"/>
+                    <text>18879403746</text>
+                </view>
+
+                <view class="personal-mail">
+                    <image src="../../images/mail.png" class="personal-pic"/>
+                    <text>2725965600@qq.com</text>
+                </view>
+            </view>
+            <view class="personal-right">
+                <image src="../../images/editor.png" class="personal-pic3"/>
+                <tetx>编辑</tetx>
+            </view>
+        </view>
+        <view class="section-wanted">
+            <view class="wanted-hd">
+                <view class="wanted-left">
+                    <text>求职意向</text>
+                </view>
+                <view class="wanted-right">
+                    <image src="../../images/editor.png" class="personal-pic3" />
+                    <tetx>编辑</tetx>
+                </view>
+            </view>
+            <view class="wanted-ft">
+                <text>前端工程师</text>
+                <text>南昌|实习|4000-6000元/月</text>
+            </view>
+        </view>
+        <view class="section-experience">
+            <view>
+                <image src="../../images/more.png" />
+                <text>添加实习经验</text>
+            </view>
+        </view>
+        <view class="section-experience">
+            <view>
+                <image src="../../images/more.png" />
+                <text>添加项目经验</text>
+            </view>
+            </view>
+            <view class="section-personal">
+                <view class="wanted-hd">
+                    <view class="wanted-left">
+                        <text>自我描述</text>
+                    </view>
+                    <view class="wanted-right">
+                        <image src="../../images/editor.png" class="personal-pic3" />
+                        <tetx>编辑</tetx>
+                        
+                    </view>
+                </view>
+                <view class="wanted-bd"></view>
+            </view>
+            <view class="section-experience">
+            <view>
+                <image src="../../images/more.png" />
+                <text>添加自定义模块</text>
+            </view>
+        </view>
+        </scroll-view>
+        </view>

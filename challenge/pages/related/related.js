@@ -125,13 +125,16 @@ Page({
     isShow: false
   }],
   currentIndex: 0,
-  location: '南昌'
+  location: '南昌',
+  status: 10
   },
   select(e) {
     console.log(e);
-    const currentindex = e.currentTarget.dataset;
- 
-    
+    const status = e.currentTarget.dataset.status;
+    console.log(status)
+    this.setData({
+      status
+    })
 
   },
   selectfinancing(e) {
