@@ -1,0 +1,120 @@
+<view class="container">
+ 
+        <view class="weui-cells weui-cells_after-title name">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">真实姓名</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input name-input" value="{{val}}" bindinput="nameChange" placeholder="请输入" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title name">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">性别</view>
+                <view class="weui-cell__ft">
+                    <picker bindchange="bindSexChange" value="{{index}}" range="{{arraySex.sex}}" class="name-input">
+                        <view class="selectPick" wx:if="{{!arraySex.isPickSelect}}">
+                            <text>请选择</text>
+                        </view>
+                        <view wx:else class="picker">
+                            {{arraySex.sex[arraySex.index]}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title name">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">出生日期</view>
+                <view class="weui-cell__ft">
+                    <picker mode="date" value="{{date}}" start="1949-10-01" end="2018-06-01" bindchange="bindDateChange">
+                        <view class="picker">
+                            {{date}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title name">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">最高学历</view>
+                <view class="weui-cell__ft">
+                    <picker bindchange="bindEducationChange" value="{{index}}" range="{{arrayEducation.education}}">
+                        <view class="selectPick" wx:if="{{!arrayEducation.isPickSelect}}">
+                            <text>请选择</text>
+                        </view>
+                        <view wx:else class="picker">
+                            {{arrayEducation.education[arrayEducation.index]}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title name">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">工作经验</view>
+                <view class="weui-cell__ft">
+                    <picker bindchange="bindExperienceChange" value="{{index}}" range="{{arrayExperience.experience}}">
+                        <view class="selectPick" wx:if="{{!arrayExperience.isPickSelect}}">
+                            <text>请选择</text>
+                        </view>
+                        <view wx:else class="picker">
+                            {{arrayExperience.experience[arrayExperience.index]}}
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title name">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">手机号码</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input name-input" value="{{val}}" bindinput="telChange" placeholder="请输入" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title name">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">联系邮箱</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input name-input" value="{{val}}" bindinput="mailChange" placeholder="请输入" />
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title name">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">所在城市</view>
+
+                <view class="weui-cell__ft" bindtap="cityChange">
+                    <view wx:if="{{!isChooseCity}}" class="changeCity">
+                        <text>请选择</text>
+                    </view>
+                    <view wx:else class="changeCity">{{city}}</view>
+                </view>
+
+            </view>
+        </view>
+        <view class="bgft">
+            <view class="introduction">
+                <view class="intro">
+                    <text>一句话介绍自己</text>
+                    <view class="wordNum">{{num}}/60</view>
+                </view>
+                <view>
+                    <input placeholder="说出你的心声" focus="{{isFocus}}" value="{{value}}" maxlength="60" class="input" bindinput="inputChange" />
+                </view>
+            </view>
+            <button class="btnEdit"  bindtap="formSubmit">保存</button>
+        </view>
+        
+   
+    <!-- <loading hidden="{{hidden}}">
+            正在保存...
+           </loading> -->
+</view>

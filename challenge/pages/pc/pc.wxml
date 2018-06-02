@@ -1,0 +1,17 @@
+<view class="container">
+    <view class="scanning-hd">
+        <text>第1步</text>
+        <text>在电脑浏览器中输入“s.lagou.com”</text>
+        <image src="../../images/lagou-search.png" />
+    </view>
+    <view class="scanning-bd">
+        <text>第2步</text>
+        <text>在点击下方按钮，扫描电脑中的二维码</text>
+        <image src="../../images/scanning.png" />
+    </view>
+    <view class="scanning-ft">
+        <button class="confirm-btn" bindtap="scanning">点击扫码</button>
+        <button class="cancel-btn" bindtap="cancelScan">取消</button>
+    </view>
+</view>
+

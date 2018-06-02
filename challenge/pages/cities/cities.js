@@ -19,7 +19,6 @@ Page({
         'content-type': 'application/json'  
       },
       success: res => {
-        // console.log(res.data.data.cities);
         this.setData({
           hotcities: res.data.data.cities
         });
@@ -36,17 +35,10 @@ Page({
         'content-type': 'application/json'  
       },
       success: res => {
-        console.log(res.data.data);
-        // console.log(res.data.data[0].city);
-
         this.setData({
          firstname: res.data.data,
-        //  othercities: res.data.data.city
         });
-        //  console.log(this.data.othercities)
-        console.log(this.data.firstname);
-
-       
+      
       },
       fail: () => {
       }
@@ -56,9 +48,11 @@ Page({
   changecity(e) {
     var value = e.target.dataset.value;
     var pages = getCurrentPages();
-    var prePage = pages[pages.length - 2];
+    var prePage = pages[pages.length - 2];6
+    
     prePage.setData({
-      location: value
+      location: value,
+      city: value
     });
     wx.navigateBack({
       delta: 1

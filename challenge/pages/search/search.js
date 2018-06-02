@@ -66,14 +66,11 @@ Page({
   },
   searchcancel(e) {
     console.log(e)
-    wx.navigateBack({
-      
+    wx.navigateBack({  
       url: '../cities/cities',
       success: () => {
-        console.log('跳转成功')
       },
       fail: () => {
-        console.log('跳转失败')
       }
     })
   },

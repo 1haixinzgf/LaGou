@@ -1,4 +1,4 @@
-// pages/resume/resume.js
+// pages/pc/pc.js
 Page({
 
   /**
@@ -7,10 +7,19 @@ Page({
   data: {
   
   },
-  bindtap(e) {
+  scanning(e) {
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+      }
+    })
     
   },
-
+  cancelScan(e) {
+    wx.navigateBack({
+      url:'../resume/resume'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

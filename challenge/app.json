@@ -1,5 +1,7 @@
 {
-  "pages": [
+  "pages": [ 
+   "pages/editpersonal/editpersonal",
+    "pages/collection/collection",
     "pages/resume/resume",
     "pages/index/index",
     "pages/related/related",
@@ -7,9 +9,10 @@
     "pages/cities/cities",
     "pages/logs/logs",
     "pages/rank/rank",
-    "pages/collection/collection",
+   
     "pages/result/result",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/pc/pc"
   ],
   "window": {
     "backgroundTextStyle": "light",
