@@ -146,9 +146,28 @@ let nameVal = this.data.nameVal;
       })
       return false;
     }
+    let tel = this.data.telVal;
+    if (!/1[3456789][0-9]{9}/.test(tel)) {
+      wx.showToast({
+        title: '请输入正确的手机号码',
+        image: '../../images/warn.png',
+        duration: 1500
+      })
+      return false;
+    }
+
+    let mail = this.data.mailVal;
+    if (!/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(tel)) {
+      wx.showToast({
+        title: '请输入正确的邮箱',
+        image: '../../images/warn.png',
+        duration: 1500
+      })
+      return false;
+    }
   },
   errorInput(val,errorMsg) {
-    // console.log(val, errorMsg)
+    console.log(val, errorMsg)
   if(!val&&val.trim()){
     wx.showToast({
       title: errorMsg,

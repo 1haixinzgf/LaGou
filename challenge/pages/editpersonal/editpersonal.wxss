@@ -3,6 +3,7 @@
     background-color: #f1f6f4;
     /* width: 750rpx; */
     box-sizing: border-box;
+    overflow: hidden;
 }
 .name {
     height: 100rpx;

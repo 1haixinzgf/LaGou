@@ -48,7 +48,7 @@ Page({
   changecity(e) {
     var value = e.target.dataset.value;
     var pages = getCurrentPages();
-    var prePage = pages[pages.length - 2];6
+    var prePage = pages[pages.length - 2];
     
     prePage.setData({
       location: value,

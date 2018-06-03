@@ -6,7 +6,7 @@
     "pages/index/index",
     "pages/related/related",
     "pages/search/search",
-    "pages/cities/cities",
+  "pages/cities/cities",
     "pages/logs/logs",
     "pages/rank/rank",
    
