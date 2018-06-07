@@ -1,2 +1,43 @@
-<!--pages/rank/rank.wxml-->
-<text>pages/rank/rank.wxml</text>
+<view class="container">
+    <view class="rank-hd">
+        <swiper class="hd-title" indicator-dots="true" autoplay="true">
+            <block wx:for="{{imageUrl}}" wx:key="index" class="title-img">
+                <swiper-item>
+                    <image src="{{item}}" class="title-pic {{index==0?' first': ''}}"/>
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class="hd-content">
+            <text>一下是排行前100的招聘官，榜单实时刷新</text>
+            <text class="content-to">如何上榜?</text>
+        </view>
+    </view>
+    <view class="rank-bd">
+        <view class="rank-lists">
+            <view class="rank-list" wx:for="{{rank}}" wx:key="index" >
+                <view class="list-hd">
+                    <image src="../../images/rank2.png" class="list-hd-pic"/>
+                </view>
+                <view class="list-bd" >
+                    <view class="list-bd-title">{{item.company}}</view>
+                    <view class="list-bd-desc">
+                        <text>{{item.city}}</text>/
+                        <text>{{item.server}}</text>/
+                        <text>{{item.position}}</text>
+                    </view>
+                    <view class="bd-ft">
+                    <view class="bd-image">
+                        <image src="{{item.bossImage}}" class="bd-image-pic"/>
+                    </view>
+                    <view class="bd-name">
+                    <text>David</text><text>创始人</text><view class="bd-list-num">{{item.bossNum}}</view>
+                </view></view></view>
+                <view class="list-ft">
+                    <image src="{{item.companyImage}}" class="ft-image-pic"/>
+
+                </view>
+            </view>
+        </view>
+        
+    </view>
+</view> 

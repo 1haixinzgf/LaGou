@@ -28,5 +28,8 @@
         <view class="search-guess {{history.length === 0?'top':''}}" >
             <text>猜你要搜</text>
         </view>
+        <view class="history-position" wx:for="{{guess}}" wx:key="index">
+                <text>{{item}}</text>
+            </view>
     </view>
     </view>

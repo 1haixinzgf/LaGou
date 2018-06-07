@@ -10,7 +10,27 @@
     line-height: 100rpx;
     font-size: 32rpx;
     color: #000;
+    border-bottom: none;
+    position: relative;
 }
+
+.name:after {
+  content: '';
+  width: 0;
+}
+.name:nth-child(4):before {
+  content: '';
+  width: 0;
+}
+.name:nth-child(6):before {
+  content: '';
+  width: 0;
+}
+.name:nth-child(8):before {
+  content: '';
+  width: 0;
+}
+
 .name:nth-child(3) {
     margin-bottom: 20rpx;
 }
@@ -49,11 +69,12 @@
 .input {
     display: block;
     background-color: #fff;
-    width: 750rpx;
+    width: 700rpx;
     height: 200rpx;
     font-size: 32rpx;
     padding: 20rpx;
     padding-left: 30rpx;
+    padding-top: 10rpx;
     word-wrap: break-word;
     word-break: break-all;
     position: relative;

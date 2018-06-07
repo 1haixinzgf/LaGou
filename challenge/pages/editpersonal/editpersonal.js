@@ -71,20 +71,20 @@ Page({
   telChange(e){
     let value = e.detail.value;
     this.setData({
-      nameVal: value
+      telVal: value
     })
   },
   mailChange(e){
     let value = e.detail.value;
     this.setData({
-      nameVal: value
+      mailVal: value
     })
   },
   cityChange(e) {
     wx.navigateTo({
       url: '../cities/cities',
       success: (res) =>{
-        // console.log(city)
+        
       },
       fail: () =>{
 
@@ -92,15 +92,15 @@ Page({
     })
   },
   inputChange(e) {
-    console.log(e)
     let val = e.detail.value;
     let num = this.data.num;
     let len = val.split('').length;
-    if(len>60) {
-      wx.showToast({
-        title: '最多只能输入60个字',
-        image: '../../images/warn.png',
-        duration: 1500
+    if(len===60) {
+      wx.showModal({
+        title: '系统提示',
+        content: '最多只能输入60个字',
+        showCancel: false,
+        success: ()=>{}
       })
     }
     this.setData({
@@ -110,102 +110,114 @@ Page({
     })
   },
   formSubmit(e) {
-let nameVal = this.data.nameVal;
-    // 验证是否输入姓名
-    // if(nameVal=='') {
+    // if(this.data.nameVal.trim() === ''){
     //   wx.showToast({
-    //     title: '请输入你的姓名',
-    //     image: '../../images/warn.png',
-    //     duration: 1500
+    //     title: '请你输入姓名ssssssss',
+    //     icon:'none',
+    //     duration: 2000
     //   })
-    //   return false;
+    //   return
     // }
 
-    this.errorInput(this.data.nameVal,'请输入你的名字')
-    // 验证是否选择性别
-    // let arraySex = this.data.arraySex
-    // let sexVal = arraySex.sex[arraySex.index]
-    // console.log(arraySex);
-    // console.log(sexVal)
-    // if(!sexVal) {
-    //   wx.showToast({
-    //     title: '请选择性别',
-    //     image: '../../images/warn.png',
-    //     duration: 1500
-    //   })
-    //   return false;
-    // };
-    // this.error(this.data.arraySex,this.data.arraySex.sex,'请选择你的性别');
-    this.error(this.data.arraySex.isPickSelect, '请选择你的性别')
-    let date = this.data.date;
-    if(date==='1999-01-01') {
-      wx.showToast({
-        title: '请选择你的出生日期',
-        image: '../../images/warn.png',
-        duration: 1500
-      })
+    //验证是否输入名字
+    if (!this.errorInput(this.data.nameVal, '请输入你的名字')) {
       return false;
-    }
-    let tel = this.data.telVal;
-    if (!/1[3456789][0-9]{9}/.test(tel)) {
-      wx.showToast({
-        title: '请输入正确的手机号码',
-        image: '../../images/warn.png',
-        duration: 1500
+    };
+
+    //验证是否选择性别
+    if (!this.error(this.data.arraySex.isPickSelect, '请选择你的性别')) {
+      return false;
+    };
+
+    //验证是否选择了出生日期
+    let date = this.data.date;
+    if (date === '1999-01-01') {
+      wx.showModal({
+        title: '系统提示',
+        content: '请选择你的出生日期',
+        showCancel: false,
+        duration: 1500,
+        success: () => { }
       })
       return false;
     }
 
-    let mail = this.data.mailVal;
-    if (!/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(tel)) {
-      wx.showToast({
-        title: '请输入正确的邮箱',
-        image: '../../images/warn.png',
-        duration: 1500
-      })
+    //验证是否选择了学历
+    if (!this.error(this.data.arrayEducation.isPickSelect, '请选择你的学历')) {
+      return false
+    }
+    //验证是否选择了工作经验
+    if (!this.error(this.data.arrayExperience.isPickSelect, '请选择你的工作经验')) {
+      return false
+    }
+
+    let tel = this.data.telVal;
+    if (!this.errorInput(tel, '请输入手机号码')) {
       return false;
     }
+    if (!/1[3456789][0-9]{9}/.test(tel.trim())) {
+      wx.showModal({
+        title: '系统提示',
+        content: '手机号码格式有误',
+        showCancel: false,
+        duration: 1500,
+        success: () => { }
+      })
+      return;
+    }
+
+
+    let mail = this.data.mailVal;
+    if (!this.errorInput(mail, '请输入你的邮箱')) {
+      return;
+    }
+
+    if (!/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(mail.trim())) {
+      wx.showModal({
+        title: '系统提示',
+        content: '请输入正确的邮箱',
+        showCancel: false,
+        duration: 1500,
+        success: () => { }
+      })
+      return;
+    }
+    if (!this.error(this.data.arraySex.isPickSelect, '请选择你的性别')) {
+      return false
+    }
   },
-  errorInput(val,errorMsg) {
-    console.log(val, errorMsg)
-  if(!val&&val.trim()){
-    wx.showToast({
-      title: errorMsg,
-      image: '../../images/warn.png',
-      duration: 1500
-    })
-    return false;
-  }
+  errorInput(val, errorMsg) {
+    if (val.trim() === '') {
+      console.log(errorMsg);
+      wx.showModal({
+        title: '系统提示',
+        content: errorMsg,
+        showCancel: false,
+        duration: 1500,
+        success: () => {
+        }
+      })
+      return false;
+    } else {
+      return true;
+    }
   },
   error(isShow, errorMsg) {
-    console.log(isShow, errorMsg)
-  if(!isShow) {
-   wx.showToast({
-        title: errorMsg,
-        image: '../../images/warn.png',
-        duration: 1500
+    if (!isShow) {
+      wx.showModal({
+        title: '系统提示',
+        content: errorMsg,
+        showCancel: false,
+        duration: 1500,
+        success: () => { }
       })
       return false;
+    } else {
+      return true;
     }
+
   },
-  // error(array,name,errorMsg) {
-  //   console.log(array, name, errorMsg);
-  //   var index = array.index;
-  //   console.log(index);
-  //   var val = null;
-  //   if(index){
-  //      val = name[index]; 
-  //   }
-  //   console.log(val);
-  //   if(!val) {
-  //       wx.showToast({
-  //         title: errorMsg,
-  //         image: '../../images/warn.png',
-  //         duration: 1500
-  //       })
-  //       return false;
-  //   }
-  // },
+  
   /**
    * 生命周期函数--监听页面加载
    */

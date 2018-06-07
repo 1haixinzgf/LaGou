@@ -45,9 +45,8 @@
     margin-bottom: 20rpx;
 
 }
-.search-input {
-    display: inline-block;
-}
+
+
 .search-input {
     width: 480rpx;
     /* text-align: center; */
@@ -59,7 +58,7 @@
     font-size: 30rpx;
     color: #fbfbfb;
     border-radius: 50rpx;
-    border:1rpx solid #474747;   
+    border:1rpx solid #e8e8e8;   
     position: relative; 
 }
 .search-position {
@@ -118,7 +117,7 @@
     margin-top: 11rpx;
     width: 750rpx;
     height: calc(100vh - 80rpx);
-    background-color: #fcf8f8;
+    background-color: #f6f6f6;
     overflow: hidden;
 }
 .search-history {
@@ -157,7 +156,7 @@
     /* width: 200rpx; */
     margin-top: 23rpx;
     margin-left: 40rpx;
-    background-color: #a39696;
+    background-color: #fff;
     padding: 5rpx 25rpx 5rpx 25rpx;
     /* height: 40rpx; */
     font-size: 30rpx;

@@ -126,24 +126,23 @@ Page({
   }],
   currentIndex: 0,
   location: '南昌',
-  status: 10
+  status: 10,
+  inputVal: ''
+  },
+  onInput(e) {
+
   },
   select(e) {
-    console.log(e);
     const status = e.currentTarget.dataset.status;
-    console.log(status)
+    console.log(inputVal)
     this.setData({
       status
     })
-
   },
   selectfinancing(e) {
-    // console.log(e);
     const index = e.target.dataset.index;
     var list = this.data.financing;
-    // console.log(list);
     for (var i = 0; i < this.data.financing.length; i++){
-      // console.log(index + "==" + i);
       if(index == i){
         console.log(index == i);
         list[i].isShow = !list[i].isShow;
@@ -156,24 +155,19 @@ Page({
   },
 
   selectfield(e) {
-    // console.log(e);
     const index = e.target.dataset.index;
     var list = this.data.field;
     console.log(list);
     for (var i = 0; i < list.length; i++) {
-      // console.log(index + "==" + i);
       if (index == i) {
-        // console.log(index == i);
         list[i].isShow = !list[i].isShow;
       }
     }
     this.setData({
       field: list
     });
-    // console.log(list);
   },
   selectsalary(e) {
-    // console.log(e);
     const index = e.currentTarget.dataset.index;
     let  salaryShowIndex = this.data.salaryShowIndex;
     salaryShowIndex = index;
@@ -183,31 +177,22 @@ Page({
     })
   },
   selectpublishtime(e) {
-    // console.log(e);
     const index = e.currentTarget.dataset.index;
     let  publishtimeShowIndex = this.data.publishtimeShowIndex;
     publishtimeShowIndex = index;
-    // console.log(publishtimeShowIndex);
     this.setData({
       publishtimeShowIndex
     })
   },
   selectexperience(e) {
-    // console.log(e);
-    // let experienceArr = this.data.experienceArr;
     const index = e.currentTarget.dataset.index;
     let  experienceShowIndex = this.data.experienceShowIndex;
     experienceShowIndex = index;
-    // experienceArr.push(experienceShowIndex);
-    // console.log(experienceArr)
-    // console.log(experienceShowIndex);
-    
     this.setData({
       experienceShowIndex
     })
   },
   selecteducation(e) {
-    // console.log(e);
     const index = e.currentTarget.dataset.index;
     let  educationShowIndex = this.data.educationShowIndex;
     educationShowIndex = index;
@@ -217,7 +202,6 @@ Page({
     })
   },
   selectmode(e) {
-    // console.log(e);
     const index = e.currentTarget.dataset.index;
     let modeShowIndex = this.data.modeShowIndex;
     modeShowIndex = index;
@@ -250,7 +234,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let inputVal = this.data.inputVal;
+    this.setData({
+      inputVal: options.value
+    })
   },
 
   /**

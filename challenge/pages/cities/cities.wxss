@@ -1,18 +1,22 @@
 .container {
-    width: 750rpx;
-    height: 100vh;  
-    box-sizing: border-box;
-    overflow: hidden;
+  /* border: 1rpx solid red; */
+     width: 750rpx; 
+    /* width: 100%; */
+    /* height: 100vh;   */
+     box-sizing: border-box; 
+    /* overflow: hidden; */
 }
 .hot-city {
-    width: 750rpx;
+    width: 100%;
     height: 40rpx;
     /* background-color: yellow; */
     color: #282828;
     font-size: 28rpx;
     margin-top: 10rpx;
     line-height: 40rpx;
-    
+     /* border: 1rpx solid red; */
+
+     
 }
 .hot-city-pic {
     width: 30rpx;
@@ -22,7 +26,7 @@
     vertical-align: middle;
 }
 .cities {
-    width: 750rpx;
+    width: 100%;
     padding-top: 20rpx;
     /* margin: 0 auto; */
     /* background-color: red; */
@@ -56,7 +60,7 @@
     /* margin-right: 0; */
 }
 .other-city{
-    width: 750rpx;
+    width: 100%;
     height: 40rpx;
     /* background-color: yellow; */
     color: #282828;

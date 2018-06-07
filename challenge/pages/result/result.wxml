@@ -1,0 +1,81 @@
+<view class="container">
+    <view class="position-command">
+        <view class="command-title">
+            <view class="title-hd"><text>互联网产品经理</text></view>
+            <view class="title-bd">
+                <text class="title-salary">8K-15K</text>/
+                <text>南昌-抚生路</text>/
+                <text>1-3年</text>/
+                <text>大专</text>
+            </view>
+            <view class="title-ft">
+                <text>职业诱惑：</text>
+                <text>环境好,国内外旅,技术大牛,内部招聘</text>
+            </view>
+        </view>
+        <view class="command-company">
+            <view class="company-left">
+                <view class="left-area"><text>OPPO江西</text></view>
+                <view class="left-other"><text>不需要融资/2000人以上/其他</text>
+            </view></view>
+            <view class="company-right">
+                <image src="../../images/change1.png" class="right-pic"/>
+            </view>
+        </view>
+    </view>
+    <view class="position-desc">
+        <view class="desc-title">
+            <text>职位描述</text>
+        </view>
+        <view class="desc-rule">
+            <view class="rule-item">产品设计</view>
+            <view class="rule-item">用户体验</view>
+            <view class="rule-item">产品经理</view>
+        </view>
+        <view class="desc-content">
+            <view class="content-title">岗位职责：</view>
+            <text class="list1">1、负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营</text>
+            <text class="list1">2、负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营</text>
+            <text class="list1">3、负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营负责开发、测试、运营</text>
+        </view>
+        <view class="position-pub">
+            <text>职位发布者</text>
+            <view class="pub-img">
+                <image src="../../images/change1.png" class="pub-pic"/>
+            </view>
+            <text>hr</text>
+            
+        </view>
+        <view class="position-area">
+
+        </view>
+        
+
+    </view>
+    <view class="area">
+        <view class="area-title">工作地址</view>
+        <view class="job-area">
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd">
+                    <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+                </view>
+                <view class="weui-cell__bd">cell standard</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">说明文字</view>
+            </navigator>
+        </view>
+    </view>
+    <view class="collection">
+        <view class="coll-share " bindtap="sharePosition">
+            <view class="coll-share-img">
+                <image src="../../images/share.png" class="coll-share-pic"/></view>
+            <view>分享</view></view>
+        <view class="coll-share">
+            <view class="coll-share-img">
+                <image src="../../images/tabbar3.png" class="coll-share-pic"/></view>
+            <view>收藏</view></view>
+        <view >
+            <button class="coll-btn">投递简历</button>
+        </view>
+    </view>
+
+</view>

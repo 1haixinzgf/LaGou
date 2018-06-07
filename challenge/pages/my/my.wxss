@@ -38,6 +38,8 @@
 .my-name {
     font-size: 60rpx;
     font-weight: bold;
+    background-color: #fff;
+    border: none;
 }
 .cell-margin {
     margin-top: 10rpx;
@@ -51,4 +53,10 @@
     height: 80rpx;
     line-height: 80rpx;
 
+}
+.complete {
+    font-size: 30rpx;
+}
+.complete-pre {
+    color: #2aca97;
 }

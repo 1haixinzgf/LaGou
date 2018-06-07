@@ -2,7 +2,7 @@
     <view class="search-hd">
         <view class="search-position">
             <image src="../../images/job-search-pic.png" class="search-position-pic" />
-            <input class="search-position-input" />
+            <input class="search-position-input" bindinput='onInput' value="{{inputVal}}" focus='{{true}}'/>
         </view>
         <view class="search-nav">
             <view class="search-nav-list" bindtap="select" data-nav="position" data-status="0">

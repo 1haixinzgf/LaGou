@@ -9,26 +9,26 @@ Page({
     search: {
     content:''
   },
-  history: []
+  history: [],
+  guess:["数据挖掘","高级测试工程师","产品运营","web前端","市场","汽车","Java","助理"]
   },
   choosecity(e) {
     wx.navigateTo({
       url:'../cities/cities',
       success:() => {
-        
       },
-      fail: () => {
-        
+      fail: () => {       
       }
     })
   },
   searchinto(e) {
     // console.log(e)
     const value = this.data.search.content;
-    const history = this.data.history;
-    console.log(value);
+    let history = this.data.history;
     history.push(value);
-    console.log(history);
+    wx.navigateTo({
+      url:`../related/related?value=${value}`
+    })
     this.setData({
       history
     })
@@ -64,16 +64,7 @@ Page({
       ['search.content']: value
     })
   },
-  searchcancel(e) {
-    console.log(e)
-    wx.navigateBack({  
-      url: '../cities/cities',
-      success: () => {
-      },
-      fail: () => {
-      }
-    })
-  },
+  
 
   /**
    * 生命周期函数--监听页面加载

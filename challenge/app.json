@@ -1,17 +1,22 @@
 {
-  "pages": [ 
-   "pages/editpersonal/editpersonal",
-    "pages/collection/collection",
-    "pages/resume/resume",
-    "pages/index/index",
-    "pages/related/related",
+  "pages": [
     "pages/search/search",
-  "pages/cities/cities",
-    "pages/logs/logs",
+    "pages/editpersonal/editpersonal",
+    "pages/my/my",
+    "pages/resume/resume",
+    "pages/result/result", 
+    "pages/index/index",
     "pages/rank/rank",
    
-    "pages/result/result",
-    "pages/my/my",
+  "pages/cities/cities",
+   
+    "pages/collection/collection",
+    
+   
+    "pages/related/related",
+    
+    "pages/logs/logs",
+    
     "pages/pc/pc"
   ],
   "window": {

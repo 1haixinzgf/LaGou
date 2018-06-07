@@ -5,14 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    imageUrl: ['../../images/imageUrl1.jpg',
+      '../../images/imageUrl2.jpg'],
+      rank: []
   },
-
+  hotcities() {
+    wx.request({
+      url: 'https://www.easy-mock.com/mock/5b06da4872643c7a5c4edcd1/api/rank',
+      method: 'get',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: res => {
+        this.setData({
+        rank: res.data.data
+        });
+        console.log(res)
+      },
+      fail: () => {
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.hotcities();
+ 
   },
 
   /**

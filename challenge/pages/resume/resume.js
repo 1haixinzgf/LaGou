@@ -7,7 +7,7 @@ Page({
   data: {
   
   },
-  bindtap(e) {
+  sharePosition(e) {
     
   },
 
