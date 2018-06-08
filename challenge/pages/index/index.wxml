@@ -14,7 +14,7 @@
         <view class="line-right"></view>
     </view>
     <scroll-view scroll-y="true"  class="job-bd">
-        <view  class="job-item" wx:for="{{position}}" wx:key="{{item.id}}" dataset-index="index">
+        <view  class="job-item" wx:for="{{position}}" wx:key="index" data-id="{{item.id}}" bindtap="enterDesc">
             <view class="company-logo">
                 <image src="{{item.image}}" class="company-pic"/>
             </view>
@@ -34,6 +34,7 @@
                 <text class="job-publish">{{item.publishtime}}</text>
             </view>
         </view>
+        <!-- <loading hidden="{{false}}"></loading> -->
         <view class="nomore"><text>没有更多了</text></view>
     </scroll-view>
 </view>

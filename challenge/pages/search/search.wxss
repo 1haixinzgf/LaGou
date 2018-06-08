@@ -12,7 +12,6 @@
     width: 720rpx;
     height: 70rpx;
     margin: 0 auto;
-    /* background-color: red; */
     margin-top: 10rpx;
     font-size: 0;
     position: relative;
@@ -21,7 +20,6 @@
     float: left;
     width: 120rpx;
     height: 70rpx;
-    /* background-color: blue; */
     text-align: center;
 
 }
@@ -35,21 +33,16 @@
     height:70rpx;
     overflow: hidden;
     text-overflow: ellipsis;
-  
 }
 .search-city-pic {
     width: 25rpx;
     height: 30rpx;
-    /* vertical-align: middle; */
     margin-left: 15rpx;
     margin-bottom: 20rpx;
 
 }
-
-
 .search-input {
     width: 480rpx;
-    /* text-align: center; */
     display: inline-block;
     margin-top: 10rpx;
     height: 50rpx;
@@ -65,19 +58,15 @@
     width: 355rpx;
     height: 50rpx;
     display: inline-block;
-    /* background-color: red; */
     border-radius: 50rpx;
     margin-left: 50rpx;
-    /* z-index: 999; */
     color:#000;
     padding-left: 10rpx;
-    /* padding-right: 200rpx; */
 }
 .job-search-pic {
     width: 40rpx;
     height: 40rpx;
     position: absolute;
-    /* z-index: 3; */
     left: 15rpx;
     top: 8rpx;
 }
@@ -98,7 +87,6 @@
     width: 60rpx;
     height: 70rpx;
     margin-right: 15rpx;
-    /* background-color: blue; */
     text-align: center;
     font-size: 30rpx;
     line-height: 70rpx;
@@ -120,6 +108,33 @@
     background-color: #f6f6f6;
     overflow: hidden;
 }
+.item-lists {
+    width: 750rpx;
+    font-size: 30rpx;
+    color: #343434;
+    background-color: #fff;
+
+}
+.border-botton {
+    position: relative;
+    margin-top: 10rpx;
+}
+.border-botton:after {
+    position: absolute;
+    content: '';
+    width: 700rpx;
+    height: 1rpx;
+    background-color: #dfdfd9;
+    top: 100rpx;
+}
+.job-desc {
+    margin-left: 35rpx;
+}
+.list-img {
+    width: 50rpx;
+    height: 50rpx;
+    vertical-align: middle;
+}
 .search-history {
     width: 700rpx;
     height: 80rpx;
@@ -132,15 +147,12 @@
 .search-history text {
     display: inline-block;
     margin-top: 25rpx;
-
-
 }
 .history-delete {
     width: 120rpx;
     height: 60rpx;
     float: right;
     margin-right: 20rpx;
-    /* background-color: red; */
      padding-top: 5rpx;
     padding-left: 10rpx;
     text-align: center;
@@ -151,19 +163,14 @@
     vertical-align: middle;   
 }
 .history-position {
-    /* background-color: #fff; */
     display: inline-block;
-    /* width: 200rpx; */
     margin-top: 23rpx;
     margin-left: 40rpx;
     background-color: #fff;
     padding: 5rpx 25rpx 5rpx 25rpx;
-    /* height: 40rpx; */
     font-size: 30rpx;
     max-width: 600rpx;
     overflow: hidden;
-    /* line-height: 40rpx; */
-    /* text-align: center; */
     color: #282828;
     border: 1rpx solid #fff;
     border-radius: 30rpx;

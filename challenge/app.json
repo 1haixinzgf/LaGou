@@ -1,24 +1,24 @@
 {
   "pages": [
     "pages/search/search",
-    "pages/editpersonal/editpersonal",
-    "pages/my/my",
-    "pages/resume/resume",
-    "pages/result/result", 
-    "pages/index/index",
-    "pages/rank/rank",
-   
-  "pages/cities/cities",
-   
-    "pages/collection/collection",
-    
-   
     "pages/related/related",
+    "pages/index/index",
+      "pages/resume/resume",
+      "pages/editpersonal/editpersonal",
+
+ 
+     
     
-    "pages/logs/logs",
-    
-    "pages/pc/pc"
-  ],
+      "pages/my/my",
+      
+      "pages/result/result",
+      "pages/rank/rank",
+      "pages/cities/cities",
+      "pages/collection/collection",
+      
+      "pages/logs/logs",
+      "pages/pc/pc"
+    ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

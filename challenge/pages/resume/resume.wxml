@@ -12,25 +12,25 @@
             <view class="personal-left">
                 <view class="personal-name">
                     <text class="personal-title">个人描述</text>
-                    <text>海心</text>
+                    <text>{{name}}</text>
                 </view>
                 <view class="personal-info">
-                    <text>男|22岁|南昌市|本科|应届毕业生</text>
+                    <text>{{sex}} |{{date}} |南昌市 |{{education}} |{{experience}} </text>
                 </view>
                 <view class="personal-description">
-                        <text>前端小白创作中</text>
+                        <text>{{inputVal}}</text>
                     </view>
                 <view class="personal-tel">
                         <image src="../../images/phone.png" class="personal-pic"/>
-                    <text>18879403746</text>
+                    <text>{{tel}}</text>
                 </view>
 
                 <view class="personal-mail">
                     <image src="../../images/mail.png" class="personal-pic"/>
-                    <text>2725965600@qq.com</text>
+                    <text>{{mail}}</text>
                 </view>
             </view>
-            <view class="personal-right" bindtp="editPersonal">
+            <view class="personal-right" bindtap="editPersonal" >
                 <image src="../../images/editor.png" class="personal-pic3"/>
                 <tetx>编辑</tetx>
             </view>

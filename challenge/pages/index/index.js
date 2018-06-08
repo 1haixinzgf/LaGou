@@ -19,23 +19,32 @@ Page({
         this.setData({
           position: res.data.data.position
         });
-        console.log(this.data.position);
+        // console.log(this.data.position);
       },
       fail: () => {
       }
     })
   },
 
-onLoad(){
+onLoad(options){
   this.position();
-  console.log(this.data.position)
+  // console.log(this.data.position)
 },
+enterDesc(e) {
+  let id = e.currentTarget.dataset.id;
+  wx.navigateTo({
+    url: `../result/result?id=${id}`
+  })
 
+},
 jumpsearch(e) {
+  wx.showLoading({
+    title: '正在跳转',
+  })
   wx.navigateTo({
     url: '../search/search',
     success: () => {
-      // console.log('跳转成功');
+      wx.hideLoading()
     },
     fail: () => {
       // console.log('跳转失败');

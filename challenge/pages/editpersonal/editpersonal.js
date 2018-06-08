@@ -1,6 +1,7 @@
 // pages/editpersonal/editpersonal.js
 // import validateFunc from '../utils/city.js'
 // const validateFunc = require('../utils/city.js')
+var app = getApp()
 Page({
 
   /**
@@ -30,11 +31,12 @@ Page({
   inputVal: '',
   isChooseCity: false,
   isFocus: false,
-  num: 0
+  num: 0,
+  
   // hidden： false
   },
   bindSexChange(e){
-    console.log(e);
+    // console.log(e);
     let val = e.detail.value;
     this.setData({
       ['arraySex.index']: val,
@@ -62,7 +64,7 @@ Page({
   },
   bindExperienceChange(e) {
     let val = e.detail.value;
-    console.log(val)
+    // console.log(val)
     this.setData({
       ['arrayExperience.index']: val,
       ['arrayExperience.isPickSelect']: true
@@ -120,15 +122,17 @@ Page({
     // }
 
     //验证是否输入名字
-    if (!this.errorInput(this.data.nameVal, '请输入你的名字')) {
+    let nameVal = this.data.nameVal;
+    if (!this.errorInput(nameVal, '请输入你的名字')) {
       return false;
     };
-
+console.log(nameVal)
     //验证是否选择性别
+    let sex = this.data.arraySex.sex[this.data.arraySex.index];
     if (!this.error(this.data.arraySex.isPickSelect, '请选择你的性别')) {
       return false;
     };
-
+console.log(sex)
     //验证是否选择了出生日期
     let date = this.data.date;
     if (date === '1999-01-01') {
@@ -141,16 +145,20 @@ Page({
       })
       return false;
     }
-
+console.log(date)
     //验证是否选择了学历
+    let education = this.data.arrayEducation.education[this.data.arrayEducation.index];
     if (!this.error(this.data.arrayEducation.isPickSelect, '请选择你的学历')) {
       return false
     }
+
+    console.log(education)
     //验证是否选择了工作经验
+    let experience = this.data.arrayExperience.experience[this.data.arrayExperience.index];
     if (!this.error(this.data.arrayExperience.isPickSelect, '请选择你的工作经验')) {
       return false
     }
-
+    console.log(experience)
     let tel = this.data.telVal;
     if (!this.errorInput(tel, '请输入手机号码')) {
       return false;
@@ -165,13 +173,11 @@ Page({
       })
       return;
     }
-
-
+    console.log(tel)
     let mail = this.data.mailVal;
     if (!this.errorInput(mail, '请输入你的邮箱')) {
       return;
     }
-
     if (!/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/.test(mail.trim())) {
       wx.showModal({
         title: '系统提示',
@@ -182,13 +188,48 @@ Page({
       })
       return;
     }
-    if (!this.error(this.data.arraySex.isPickSelect, '请选择你的性别')) {
-      return false
-    }
+console.log(mail)
+let inputVal = this.data.inputVal;
+if (!this.errorInput(inputVal, '一句话介绍你自己')) {
+  return false;
+}
+    wx.setStorage({
+      key: "personal",
+      data: [{ name: nameVal },
+        { sex: sex},
+        { date: date }, 
+        { education: education},
+        { experience: experience},
+         { tel: tel }, 
+         { mail: mail }, 
+         { inputVal: inputVal },
+         ],
+      // [{ name: this.data.nameVal },
+      // { sex: this.data.arraySex.sex[this.data.arraySex.index] },
+      // { date: this.data.date },
+      // { education: this.data.arrayEducation.education[this.data.arrayEducation.index] },
+      // { experience: this.data.arrayExperience.Experience[this.data.arrayExperience.index] },
+      // { tel: this.data.telVal },
+      // { mail: this.data.mailVal }, 
+      //    ],
+      success: function () {
+        wx.showToast({
+          title: "保存成功",
+          icon: 'success',
+          duration: 2000
+        })
+        setTimeout( function(){
+          wx.navigateTo({
+            url: "../resume/resume"
+          })
+        }, 1000);
+
+      }
+    })
   },
   errorInput(val, errorMsg) {
     if (val.trim() === '') {
-      console.log(errorMsg);
+      // console.log(errorMsg);
       wx.showModal({
         title: '系统提示',
         content: errorMsg,
@@ -222,7 +263,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   /**

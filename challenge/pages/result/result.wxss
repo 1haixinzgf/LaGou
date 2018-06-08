@@ -90,18 +90,17 @@
     top: 55rpx;
 }
 .desc-rule {
-    /* border: 1rpx solid red; */
     width: 700rpx;
     margin: 0 auto;
     margin-top: 20rpx;
-    padding-top: 20rpx;
+    /* padding-top: 20rpx; */
 
 }
 .rule-item {
     display: inline-block;
     border-radius: 50rpx;
-    /* border: 2rpx solid #d9d9d9; */
-    margin-left: 10rpx; 
+    border: 2rpx solid #d9d9d9;
+    margin-top: 40rpx; 
     padding: 12rpx 32rpx 12rpx 32rpx;
     text-align: center;
     font-size: 30rpx;
@@ -120,6 +119,7 @@
 .list1 {
     line-height: 1.5;
     font-size: 25rpx;
+    margin-top: 10rpx;
 }
 .desc-content text {
     display: block;
@@ -153,8 +153,8 @@
     top: 55rpx;
 }
 .pub-img {
-    width: 200rpx;
-    height: 200rpx;
+    width: 100rpx;
+    height: 100rpx;
     border-radius: 50%;
     margin: 0 auto;
     margin-top: 60rpx;
@@ -206,5 +206,13 @@
     color: #fff;
 }
 .area {
-    padding-bottom: 150rpx;
+    padding-bottom: 200rpx;
+}
+.company-area {
+    font-size: 30rpx;
+    margin-left: 20rpx;
+}
+.nav {
+    position: relative;
+    left: 188rpx;
 }

@@ -1,4 +1,6 @@
 // pages/search/search.js
+
+import searchNotes from '../../utils/vague.js'
 Page({
   
   /**
@@ -7,8 +9,13 @@ Page({
   data: {
     location: '南昌',
     search: {
-    content:''
+    content:'',
   },
+    job: ["web前端开发工程师", "web前端", "web开发工程师", "web工程师",
+      "web前端工程师", "前端开发工程师", "前端工程师", "开发工程师",
+      "web开发", "前端开发", "web前端开发", "web前端工程师"
+      , "web", "web前端", "web前端开发工程师"],
+  list: [],
   history: [],
   guess:["数据挖掘","高级测试工程师","产品运营","web前端","市场","汽车","Java","助理"]
   },
@@ -23,12 +30,13 @@ Page({
   },
   searchinto(e) {
     // console.log(e)
-    const value = this.data.search.content;
+    let value = this.data.search.content;
     let history = this.data.history;
     history.push(value);
     wx.navigateTo({
       url:`../related/related?value=${value}`
     })
+  
     this.setData({
       history
     })
@@ -57,12 +65,19 @@ Page({
     
   },
   onInput(e) {
-    // console.log(e);
-    const value = e.detail.value;
-    // console.log(value);
+    let value = e.detail.value;
+    console.log(value);
+    const job = this.data.job;
+    var list = [];
+    for(var i = 0; i < job.length; i++){
+      if(job[i].indexOf(value)>-1){
+        list.push(job[i]);
+      }
+    }
     this.setData({
+      list: list,
       ['search.content']: value
-    })
+    });
   },
   
 

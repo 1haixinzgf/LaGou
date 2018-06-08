@@ -134,7 +134,7 @@ Page({
   },
   select(e) {
     const status = e.currentTarget.dataset.status;
-    console.log(inputVal)
+    
     this.setData({
       status
     })
@@ -234,11 +234,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let inputVal = this.data.inputVal;
-    this.setData({
+    let that = this;
+    let inputVal = that.data.inputVal;
+    that.setData({
       inputVal: options.value
     })
+    console.log(inputVal)
   },
+
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

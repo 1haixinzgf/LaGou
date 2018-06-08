@@ -14,7 +14,17 @@
         <view class="search-cancel {{!search.content?'hidden':''}}" bindtap="searchinto"><text >搜索</text></view>
     </view>
     </view>
-    <view class="search-bd">
+    <view class="item-lists">
+            <view class="weui-cell border-botton" wx:for="{{list}}" wx:key="index">
+                <view class="weui-cell__hd ">
+                    <image src="../../images/job-search-pic.png" style="margin-right: 5px;vertical-align: middle;width:30px; height: 30px;"></image>
+                </view>
+                <view class="weui-cell__bd job-desc">{{item}}</view>
+                <view class="weui-cell__ft"></view>
+            </view>
+        </view>
+        <!-- {{'hidden':''}}" -->
+    <view class="search-bd ">
         <view class="search-history {{history.length === 0?'hidden':''}}">
             <text>我搜过的</text>
             <view class="history-delete" bindtap="deleteall">
@@ -31,5 +41,6 @@
         <view class="history-position" wx:for="{{guess}}" wx:key="index">
                 <text>{{item}}</text>
             </view>
+    
     </view>
     </view>

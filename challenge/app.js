@@ -4,6 +4,15 @@ App({
   },
   globalData: {
     userInfo: null,
-    city: ''
+    city: '',
+     personal :{
+      nameVal :'',
+      sex: '',
+      date: '',
+      education: '',
+      experience: '',
+      tel: '',
+      mail: ''
+    }
   }
 })
