@@ -25,7 +25,7 @@
                     <text class="item-list">{{item.city}}</text>
                     <text class="item-list">{{item.experience}}</text>
                     <text class="item-list">{{item.educteid}}</text>
-                     <text class="item-list">{{item.company}}</text> 
+                    <text class="item-list">{{item.company}}</text> 
                     <!-- <text class="item-list">{{item.area}}</text> -->
                 </view>
             </view>

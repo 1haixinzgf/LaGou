@@ -8,14 +8,13 @@
             <image class="job-search-pic"  src="../../images/job-search-pic.png"/>
             <input class="search-position" focus='true' value="{{search.content}}" bindinput="onInput" />
             <image class="search-back-pic {{!search.content?'hidden':''}}" src="../../images/delete2.png"  bindtap="searchdelete"/>
-
          </view>
         <view class="search-cancel {{!search.content?'':'hidden'}}" bindtap="searchcancel"><text >取消</text></view>
         <view class="search-cancel {{!search.content?'hidden':''}}" bindtap="searchinto"><text >搜索</text></view>
     </view>
     </view>
     <view class="item-lists">
-            <view class="weui-cell border-botton" wx:for="{{list}}" wx:key="index">
+            <view class="weui-cell border-botton" wx:for="{{list}}" wx:key="index" bindtap="positionSearch" data-index="{{index}}">
                 <view class="weui-cell__hd ">
                     <image src="../../images/job-search-pic.png" style="margin-right: 5px;vertical-align: middle;width:30px; height: 30px;"></image>
                 </view>
@@ -33,7 +32,7 @@
             </view>
         </view>
         <view class="history-position" wx:for="{{history}}" wx:key="index">
-            <text>{{item}}</text>
+            <text bindtap="toHistory" data-value='{{item}}'>{{item}}</text>
         </view>
         <view class="search-guess {{history.length === 0?'top':''}}" >
             <text>猜你要搜</text>

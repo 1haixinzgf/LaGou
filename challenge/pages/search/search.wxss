@@ -119,6 +119,11 @@
     position: relative;
     margin-top: 10rpx;
 }
+.border-botton::before{
+    content: '';
+    position: absolute;
+    width: 0;
+}
 .border-botton:after {
     position: absolute;
     content: '';

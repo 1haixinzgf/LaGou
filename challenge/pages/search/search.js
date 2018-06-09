@@ -28,22 +28,28 @@ Page({
       }
     })
   },
+  searchcancel(e) {
+  wx.navigateBack({
+    url: '../index/index'
+  })
+  },
   searchinto(e) {
     // console.log(e)
     let value = this.data.search.content;
-    let history = this.data.history;
-    history.push(value);
+    // let history = this.data.history;
+    // history.push(value);
     wx.navigateTo({
       url:`../related/related?value=${value}`
     })
-  
     this.setData({
       history
     })
   },
   searchdelete(e) {
+    const list = this.data.list;
     this.setData({
-      ['search.content']: ''
+      ['search.content']: '',
+      list: ''
     })
   },
   deleteall(e) {
@@ -60,13 +66,11 @@ Page({
 
         }
       }
-
     })
-    
   },
   onInput(e) {
     let value = e.detail.value;
-    console.log(value);
+    // console.log(value);
     const job = this.data.job;
     var list = [];
     for(var i = 0; i < job.length; i++){
@@ -79,41 +83,67 @@ Page({
       ['search.content']: value
     });
   },
-  
+  toHistory(e){
+    console.log(e);
+    const value = e.currentTarget.dataset.value;
+    wx.navigateTo({
+      url: `../related/related?value=${value}`
+    })
+    this.setData({
+      ['search.content']: value
+    })
+
+  },
+  positionSearch(e) {
+    // console.log(e)
+    let list = this.data.list
+    let index = e.currentTarget.dataset.index;
+    let value = list[index];
+    let history = this.data.history;
+    history.push(value);
+    this.setData({
+      ['search.content']: value,
+      history
+    })
+    // let value = this.data.search.content;  
+    wx.navigateTo({
+      url: `../related/related?value=${value}`,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+      console.log('search页面加载');
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    console.log('sarch页面加载完成');
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    console.log('search页面显示');
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+      console.log('search页面隐藏');
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    console.log('search页面卸载');
   },
 
   /**

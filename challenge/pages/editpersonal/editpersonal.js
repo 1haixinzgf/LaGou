@@ -204,14 +204,6 @@ if (!this.errorInput(inputVal, '一句话介绍你自己')) {
          { mail: mail }, 
          { inputVal: inputVal },
          ],
-      // [{ name: this.data.nameVal },
-      // { sex: this.data.arraySex.sex[this.data.arraySex.index] },
-      // { date: this.data.date },
-      // { education: this.data.arrayEducation.education[this.data.arrayEducation.index] },
-      // { experience: this.data.arrayExperience.Experience[this.data.arrayExperience.index] },
-      // { tel: this.data.telVal },
-      // { mail: this.data.mailVal }, 
-      //    ],
       success: function () {
         wx.showToast({
           title: "保存成功",

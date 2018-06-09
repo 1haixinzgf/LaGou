@@ -1,6 +1,7 @@
 // pages/related/related.js
-var address = require('../../utils/city.js')
+// var address = require('../../utils/city.js')
 // var animation
+import request from '../../utils/city.js'
 Page({
 
   /**
@@ -127,17 +128,30 @@ Page({
   currentIndex: 0,
   location: '南昌',
   status: 10,
-  inputVal: ''
+  searchInfo: '',
+  searchLists: [],
+  currentLists: [],
+  isShowHidden: false
   },
   onInput(e) {
 
   },
   select(e) {
     const status = e.currentTarget.dataset.status;
-    
+    const isShowHidden = this.data.isShowHidden;
+
     this.setData({
-      status
+      status,
+      isShowHidden: true
     })
+  },
+
+  selectPosition(e) {
+    const isShowHidden = this.data.isShowHidden;
+  this.setData({
+    status:20,
+    isShowHidden: false
+  })
   },
   selectfinancing(e) {
     const index = e.target.dataset.index;
@@ -222,24 +236,59 @@ Page({
     wx.navigateTo({
       url:'../cities/cities',
       success: () =>{
-
       },
       fail:() => {
-
       }
     })
   },
-
+  getActive(value) {
+    const url = 'https://www.easy-mock.com/mock/5b076053374bec38a648c338/position/morePositions';
+    var params = {
+      url: url,
+      method: 'GET',
+    };
+    let searchLists = this.data.searchLists
+    request(params).then(res => {
+      searchLists = res.data.data.position;
+      console.log(searchLists)
+    }).then(() => {
+      for (let i = 0; i <searchLists.length; i++) {
+        if (searchLists[i].job === value ) {
+          let that = this;
+          let currentLists = that.data.currentLists;
+          currentLists.push(searchLists[i])
+          console.log(that.data.currentLists)
+          that.setData({
+            currentLists
+          })
+        }
+      }
+    }
+  );
+},
+  enterDesc(e) {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `../result/result?id=${id}`
+    })
+  },
+  collectionPosition(e) {
+    wx.showModal({
+      title: '系统提示',
+      content: '收藏成功',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
-    let inputVal = that.data.inputVal;
-    that.setData({
-      inputVal: options.value
+    console.log('related页面加载');
+    let value = options.value;
+    this.getActive(value);
+    let searchInfo = this.data.searchInfo;
+    this.setData({
+      searchInfo: value
     })
-    console.log(inputVal)
   },
 
   
@@ -248,28 +297,28 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    console.log('related页面加载完成');
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    console.log('related页面展示');
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    console.log('related页面隐藏');
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    console.log('related页面卸载');
   },
 
   /**

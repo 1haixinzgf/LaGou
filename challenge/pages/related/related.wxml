@@ -2,7 +2,7 @@
     <view class="search-hd">
         <view class="search-position">
             <image src="../../images/job-search-pic.png" class="search-position-pic" />
-            <input class="search-position-input" bindinput='onInput' value="{{inputVal}}" focus='{{true}}'/>
+            <input class="search-position-input" bindinput='onInput' value="{{searchInfo}}" focus='{{true}}'/>
         </view>
         <view class="search-nav">
             <view class="search-nav-list" bindtap="select" data-nav="position" data-status="0">
@@ -19,6 +19,30 @@
             </view>
         </view>
     </view>
+    <scroll-view scroll-y="true"  class="job-bd {{isShowHidden?'hidden':''}}">
+        <view  class="job-item" wx:for="{{currentLists}}" wx:key="index" data-id="{{item.id}}" bindtap="enterDesc">
+            <view class="company-logo">
+                <image src="{{item.image}}" class="company-pic"/>
+            </view>
+            <view class="job-work">
+                <text class="job-work-position">{{item.job}}</text>
+                <text class="job-work-company">{{item.company}}</text>
+                <view class="job-demand">
+                    <text class="item-list">{{item.city}}</text>
+                    <text class="item-list">{{item.experience}}</text>
+                    <text class="item-list">{{item.educteid}}</text>
+                     <text class="item-list">{{item.company}}</text> 
+                    <!-- <text class="item-list">{{item.area}}</text> -->
+                </view>
+            </view>
+            <view class="job-ft">
+                <text class="job-money">{{item.salary}}</text>
+                <text class="job-publish">{{item.publishtime}}</text>
+            </view>
+        </view>
+        </scroll-view>
+
+
     <view class="main {{status==0?'':'hidden'}}">
  <scroll-view scroll-y class="city-right" style="height: calc(100vh - 300rpx);" >
      <view wx:for="{{field}}" wx:key="index" class="city-list">{{item.name}}</view>
@@ -88,7 +112,7 @@
             </view>
         </view>
         <view class="btn">
-            <button class="position-btn">确定</button>
+            <button class="position-btn" bindtap="selectPosition">确定</button>
         </view>
     </scroll-view>
 
@@ -117,7 +141,7 @@
             </view>
         </view>
         <view class="btn">
-            <button class="position-btn">确定</button>
+            <button class="position-btn" bindtap="selectPosition">确定</button>
         </view>
     </scroll-view>
     <view class="position-sort {{status==3?'':'hidden'}}">

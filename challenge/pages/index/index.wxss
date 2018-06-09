@@ -46,7 +46,7 @@
     position: absolute;
     z-index: 3;
     left: 230rpx;
-    top: 17rpx;
+    top: 29rpx;
 }
 .job-recommend {
     width: 100%;
@@ -93,10 +93,10 @@
     border-bottom: 1px solid #eaeaea;
 }
 .company-logo {
-   
-
-   width: 150rpx;
-   height: 150rpx;
+  margin-top: 0rpx;
+  margin-left: 10rpx; 
+   width: 110rpx;
+   height: 110rpx;
     font-size: 0;
 }
 .company-pic {
@@ -168,10 +168,8 @@
     margin-top: 51rpx;
 }
 .nomore {
-  width: 750rpx;
-  height: 100rpx;
+  margin-top: 20rpx;
   text-align: center;
-  font-size: 26rpx;
-  line-height: 100rpx;
-  color: #a6a6a6;
+  font-size: 30rpx;
+
 }

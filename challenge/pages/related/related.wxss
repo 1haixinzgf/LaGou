@@ -211,3 +211,94 @@
 .hidden {
     display: none;
 }
+.job-bd {
+    width: 100%;
+    height: calc(100vh - 400rpx);
+}
+.job-item {
+    /* float: left; */
+    width: 750rpx;
+    height:165rpx;
+    margin: 0 auto;
+    margin-top: 40rpx;
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+    border-bottom: 1px solid #eaeaea;
+}
+.company-logo {
+   
+
+   width: 150rpx;
+   height: 150rpx;
+    font-size: 0;
+}
+.company-pic {
+    width: 100%;
+    height: 100%;
+   /* vertical-align: middle; */
+}    
+
+.job-work {
+    margin-left: -40rpx;
+    height: 200rpx;
+    width: 350rpx;
+    /* background-color: red; */
+  
+    padding-top: 2rpx;
+}
+.job-work-position {
+
+    display: block;
+    color: #323232;
+    font-size: 31rpx;
+}
+.job-work-company {
+    display: block;
+    margin-top: 10rpx;
+    color: #797979;
+    font-size: 28rpx;
+}
+.job-demand {
+    font-size: 25rpx;
+    /* text-align: center; */
+    height: 35rpx;
+    width: 400rpx;
+    margin-top: 10rpx;
+}
+.item-list {
+    display: inline-block;
+    color: #939393;
+    height: 35rpx;
+    line-height: 35rpx;
+    padding-right: 8rpx; 
+    padding-left: 8rpx;
+    border-right:  3rpx solid #f4f4f4;
+    /* border-right:  3rpx solid red; */
+}
+.item-list:first-child {
+    padding-left: 0;
+}
+.item-list:last-child {
+    border: none;
+}
+.job-ft {
+    width: 150rpx;
+    height: 200rpx;
+    /* background: red; */
+    text-align: right;
+    margin-right: 50rpx; 
+
+}
+.job-money {
+    display: inline-block;
+    color: #f7513e;
+    font-size: 30rpx;
+}
+.job-publish {
+    display: inline-block;
+    color: #a6a6a6;
+    font-size: 25rpx;
+    margin-top: 51rpx;
+}
